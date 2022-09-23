@@ -62,6 +62,17 @@ select top 10 address, seller, buyer, zillow_estimate
 from philly_housing_2
 order by zillow_estimate;
 
+---find top buyers/sellers by sum of zillow estimate
+select seller, SUM(zillow_estimate) as total_zillow
+from philly_housing_2
+group by seller
+order by total_zillow desc;
+
+select buyer, SUM(zillow_estimate) as total_zillow
+from philly_housing_2
+group by buyer
+order by total_zillow desc;
+
 ---find average rent across the data
 select AVG(rent_estimate) as Average_rent
 from philly_housing_2;
