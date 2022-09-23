@@ -1,3 +1,11 @@
+/*
+Philly Housing Exploration
+
+Skills used: Creating Tables, Creating Temp Tables, Window Functions, Aggregate Functions, Case When Statements,
+CTEs, Subqueries, Like Operator, Having Clause
+
+*/
+
 ---preview the data, limiting to first 10 rows
 select top 10 *
 from Portfolio..philly_housing;
@@ -130,7 +138,6 @@ where address in (
 select address
 from #Aug_Sept_sales)
 order by sale_date, rent_estimate desc, address;
-
 
 ---find average cost for different property types, along with the total comps and number of properties for each property type
 select PropType, AVG(zillow_estimate) as Avg_Cost, 
